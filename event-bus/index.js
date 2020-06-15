@@ -11,11 +11,20 @@ app.post('/events', (req, res) => {
     const event = req.body;
 
     events.push(event);
-
+    //4000 is a posts service
     axios.post('http://localhost:4000/events', event);
+
+    //4001 is a comments service
     axios.post('http://localhost:4001/events', event);
+
+    //4002 is a query service
     axios.post('http://localhost:4002/events', event);
+
+    //4003 is a moderation service
     axios.post('http://localhost:4003/events', event);
+
+    axios.post('http://localhost:4006/events', event);
+    axios.post('http://localhost:4007/events', event);
 
     res.send({status: 'OK'});
 
