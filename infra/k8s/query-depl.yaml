@@ -14,7 +14,7 @@ spec:
     spec:
       containers:
         - name: query
-          image: matthawrot/query:latest
+          image: matthawrot/query
 ---
 #Cluster IP service
 
