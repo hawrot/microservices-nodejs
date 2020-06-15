@@ -14,4 +14,4 @@ spec:
     spec:
       containers:
         - name: posts
-          image: hawrot/posts:latest
+          image: matthawrot/posts:latest
