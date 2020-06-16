@@ -16,4 +16,43 @@ build:
         manual:
           - src: 'src/**/*.js'
             dest: .
-
+    - image: matthawrot/comments
+        context: comments
+        docker:
+          dockerfile: Dockerfile
+        sync:
+          manual:
+            - src: '*.js'
+              dest: .
+    - image: matthawrot/event-bus
+        context: event-vus
+        docker:
+          dockerfile: Dockerfile
+        sync:
+          manual:
+            - src: '*.js'
+              dest: .
+    - image: matthawrot/moderation
+        context: moderation
+        docker:
+          dockerfile: Dockerfile
+        sync:
+          manual:
+            - src: '*.js'
+              dest: .
+    - image: matthawrot/posts
+        context: posts
+        docker:
+          dockerfile: Dockerfile
+        sync:
+          manual:
+            - src: '*.js'
+              dest: .
+    - image: matthawrot/query
+        context: query
+        docker:
+          dockerfile: Dockerfile
+        sync:
+          manual:
+            - src: '*.js'
+              dest: .
