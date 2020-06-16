@@ -7,3 +7,13 @@ deply:
 build:
   local:
     push: false
+  artifacts:
+    - image: matthawrot/client
+      context: client
+      docker:
+        dockerfile: Dockerfile
+      sync:
+        manual:
+          - src: 'src/**/*.js'
+            dest: .
+
