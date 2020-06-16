@@ -1,0 +1,9 @@
+apiVersion: skaffold/v2aplha3
+kind: Config
+deply:
+  kubectl:
+    manifests:
+      - ./infra/k8s/*
+build:
+  local:
+    push: false
