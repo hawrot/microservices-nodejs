@@ -19,11 +19,11 @@ spec:
               serviceName: query-srv
               servicePort: 4002
           - path: /posts/?(.*)/comments  #accepts incoming values such as post id
-              backend:
+            backend:
                 serviceName: comments-srv
                 servicePort: 4001
           - path: /?(.*) #needs to be as a last path
-              backend:
+            backend:
                 serviceName: client-srv
                 servicePort: 3000
 
