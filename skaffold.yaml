@@ -1,6 +1,6 @@
-apiVersion: skaffold/v2aplha3
+apiVersion: skaffold/v2alpha3
 kind: Config
-deply:
+deploy:
   kubectl:
     manifests:
       - ./infra/k8s/*
@@ -17,42 +17,42 @@ build:
           - src: 'src/**/*.js'
             dest: .
     - image: matthawrot/comments
-        context: comments
-        docker:
-          dockerfile: Dockerfile
-        sync:
-          manual:
-            - src: '*.js'
-              dest: .
+      context: comments
+      docker:
+        dockerfile: Dockerfile
+      sync:
+        manual:
+          - src: '*.js'
+            dest: .
     - image: matthawrot/event-bus
-        context: event-vus
-        docker:
-          dockerfile: Dockerfile
-        sync:
-          manual:
-            - src: '*.js'
-              dest: .
+      context: event-bus
+      docker:
+        dockerfile: Dockerfile
+      sync:
+        manual:
+          - src: '*.js'
+            dest: .
     - image: matthawrot/moderation
-        context: moderation
-        docker:
-          dockerfile: Dockerfile
-        sync:
-          manual:
-            - src: '*.js'
-              dest: .
+      context: moderation
+      docker:
+        dockerfile: Dockerfile
+      sync:
+        manual:
+          - src: '*.js'
+            dest: .
     - image: matthawrot/posts
-        context: posts
-        docker:
-          dockerfile: Dockerfile
-        sync:
-          manual:
-            - src: '*.js'
-              dest: .
+      context: posts
+      docker:
+        dockerfile: Dockerfile
+      sync:
+        manual:
+          - src: '*.js'
+            dest: .
     - image: matthawrot/query
-        context: query
-        docker:
-          dockerfile: Dockerfile
-        sync:
-          manual:
-            - src: '*.js'
-              dest: .
+      context: query
+      docker:
+        dockerfile: Dockerfile
+      sync:
+        manual:
+          - src: '*.js'
+            dest: .
